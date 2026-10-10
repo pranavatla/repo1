@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nicoman Elevators</title>
+  <meta name="description" content="Nicoman Elevators: installation, maintenance, modernization and 24/7 repair for passenger, goods and home elevators.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#top" class="brand">Nicoman<span>Elevators</span></a>
+      <nav aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#why">Why us</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-inner">
+        <p class="eyebrow">Trusted elevator partner</p>
+        <h1>Smooth, safe vertical movement for every building.</h1>
+        <p class="lead">Nicoman Elevators designs, installs, maintains and repairs passenger, goods and home elevators, with a team that answers when you call.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#contact">Get a free quote</a>
+          <a class="btn btn-ghost" href="#services">Our services</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="container">
+        <h2>What we do</h2>
+        <p class="section-intro">One partner for the full life of your elevator, from the first survey to decades of service.</p>
+        <div class="grid">
+          <article class="card">
+            <h3>New installation</h3>
+            <p>Site survey, layout planning and turnkey installation for residential, commercial and industrial buildings.</p>
+          </article>
+          <article class="card">
+            <h3>Maintenance contracts</h3>
+            <p>Scheduled preventive maintenance, safety checks and lubrication to keep downtime to a minimum.</p>
+          </article>
+          <article class="card">
+            <h3>24/7 breakdown repair</h3>
+            <p>Round-the-clock emergency response with genuine spare parts and quick turnaround.</p>
+          </article>
+          <article class="card">
+            <h3>Modernization</h3>
+            <p>Controller, drive, door and cabin upgrades that improve ride comfort, energy use and compliance.</p>
+          </article>
+          <article class="card">
+            <h3>Home elevators</h3>
+            <p>Compact, quiet lifts designed for villas and independent houses, with minimal civil work.</p>
+          </article>
+          <article class="card">
+            <h3>Goods and freight lifts</h3>
+            <p>Heavy-duty platforms and goods lifts built for warehouses, hospitals, hotels and factories.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="why" class="section section-alt">
+      <div class="container">
+        <h2>Why choose Nicoman</h2>
+        <div class="grid grid-3">
+          <div class="stat">
+            <span class="stat-num">24/7</span>
+            <span class="stat-label">Emergency response</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">Safety first</span>
+            <span class="stat-label">Certified technicians and tested parts</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">Clear pricing</span>
+            <span class="stat-label">Written quotes with no hidden charges</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container contact">
+        <div>
+          <h2>Talk to our team</h2>
+          <p class="section-intro">Tell us about your building and we will get back to you with a site visit or a quote.</p>
+          <ul class="contact-list">
+            <li><strong>Phone:</strong> <a href="tel:+910000000000">+91 00000 00000</a></li>
+            <li><strong>Email:</strong> <a href="mailto:info@nico.atla.in">info@nico.atla.in</a></li>
+            <li><strong>Hours:</strong> Mon to Sat, 9:00 to 19:00 &middot; Emergency line 24/7</li>
+          </ul>
+        </div>
+        <form class="form" action="mailto:info@nico.atla.in" method="post" enctype="text/plain">
+          <label>Name
+            <input type="text" name="name" required autocomplete="name">
+          </label>
+          <label>Phone
+            <input type="tel" name="phone" required autocomplete="tel">
+          </label>
+          <label>Email
+            <input type="email" name="email" autocomplete="email">
+          </label>
+          <label>Service needed
+            <select name="service">
+              <option>New installation</option>
+              <option>Maintenance contract</option>
+              <option>Breakdown repair</option>
+              <option>Modernization</option>
+              <option>Home elevator</option>
+              <option>Goods lift</option>
+            </select>
+          </label>
+          <label>Message
+            <textarea name="message" rows="4"></textarea>
+          </label>
+          <button type="submit" class="btn btn-primary">Send enquiry</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Nicoman Elevators. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
