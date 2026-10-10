@@ -84,6 +84,41 @@
     readout.textContent = "G";
   }
 
+  /* Photo story: keep the photograph paired with the nearest service chapter.
+     Native scrolling stays untouched; mobile and reduced-motion readers see inline photos. */
+  const story = $(".lift-story");
+  const storySteps = $$("[data-story-step]");
+  const storyImages = $$("[data-story-image]");
+  const storyFloor = $("[data-story-floor]");
+  const storyDesktop = window.matchMedia("(min-width: 761px)");
+  let storyTicking = false;
+  let activeStory = -1;
+  function paintStory() {
+    storyTicking = false;
+    if (!story || !storyDesktop.matches || reduceMotion) return;
+    const target = window.innerHeight * 0.55;
+    let closest = 0;
+    let distance = Infinity;
+    storySteps.forEach((step, index) => {
+      const rect = step.getBoundingClientRect();
+      const d = Math.abs(rect.top + rect.height / 2 - target);
+      if (d < distance) { closest = index; distance = d; }
+    });
+    if (closest === activeStory) return;
+    activeStory = closest;
+    storySteps.forEach((step, index) => step.classList.toggle("is-active", index === closest));
+    storyImages.forEach((img, index) => img.classList.toggle("is-active", index === closest));
+    if (storyFloor) storyFloor.textContent = `0${closest + 1} ↑`;
+  }
+  function requestStoryPaint() {
+    if (!storyTicking) { storyTicking = true; window.requestAnimationFrame(paintStory); }
+  }
+  if (story) {
+    window.addEventListener("scroll", requestStoryPaint, { passive: true });
+    window.addEventListener("resize", requestStoryPaint);
+    paintStory();
+  }
+
   /* 4. Reveal on scroll */
   const reveals = $$(".reveal");
   if ("IntersectionObserver" in window) {
